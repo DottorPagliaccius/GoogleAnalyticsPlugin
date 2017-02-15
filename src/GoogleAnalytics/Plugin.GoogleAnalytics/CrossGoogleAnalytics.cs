@@ -1,43 +1,50 @@
-﻿using Plugin.GoogleAnalytics.Abstractions;
-using System;
+﻿using System;
+using System.Threading;
+using Plugin.GoogleAnalytics.Abstractions;
 
 namespace Plugin.GoogleAnalytics
 {
-  /// <summary>
-  /// Cross platform GoogleAnalytics implemenations
-  /// </summary>
-  public class CrossGoogleAnalytics
-  {
-    static Lazy<IGoogleAnalytics> Implementation = new Lazy<IGoogleAnalytics>(() => CreateGoogleAnalytics(), System.Threading.LazyThreadSafetyMode.PublicationOnly);
-
     /// <summary>
-    /// Current settings to use
+    /// Cross platform GoogleAnalytics implemenations
     /// </summary>
-    public static IGoogleAnalytics Current
+    public static class CrossGoogleAnalytics
     {
-      get
-      {
-        var ret = Implementation.Value;
-        if (ret == null)
+        private static Lazy<IGoogleAnalytics> Implementation = new Lazy<IGoogleAnalytics>(CreateGoogleAnalytics, LazyThreadSafetyMode.PublicationOnly);
+
+        /// <summary>
+        /// Current settings to use
+        /// </summary>
+        public static IGoogleAnalytics Current
         {
-          throw NotImplementedInReferenceAssembly();
+            get
+            {
+                var implementation = Implementation.Value;
+                if (implementation == null)
+                {
+                    throw NotImplementedInReferenceAssembly();
+                }
+
+                return implementation;
+            }
         }
-        return ret;
-      }
-    }
 
-    static IGoogleAnalytics CreateGoogleAnalytics()
-    {
+        private static IGoogleAnalytics CreateGoogleAnalytics()
+        {
 #if PORTABLE
-        return null;
+            return null;
 #else
-        return new GoogleAnalyticsImplementation();
+            return new GoogleAnalyticsImplementation();
 #endif
-    }
+        }
 
-    internal static Exception NotImplementedInReferenceAssembly()
-    {
-      return new NotImplementedException("This functionality is not implemented in the portable version of this assembly.  You should reference the NuGet package from your main application project in order to reference the platform-specific implementation.");
+        internal static Exception NotImplementedInReferenceAssembly()
+        {
+            return new NotImplementedException("This functionality is not implemented in the portable version of this assembly. You should reference the NuGet package from your main application project in order to reference the platform-specific implementation.");
+        }
+
+        internal static GoogleAnalyticsNotInitializedException NotInitialized()
+        {
+            return new GoogleAnalyticsNotInitializedException("CrossGoogleAnalytics Plugin is not initialized. Should initialize before use with CrossGoogleAnalytics Init method.");
+        }
     }
-  }
 }

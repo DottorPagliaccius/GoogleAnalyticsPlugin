@@ -1,11 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Plugin.GoogleAnalytics.Abstractions
 {
-  /// <summary>
-  /// Interface for GoogleAnalytics
-  /// </summary>
-  public interface IGoogleAnalytics
-  {
-  }
+    public enum Severity
+    {
+        Warning,
+        Error
+    }
+
+    public interface IGoogleAnalytics
+    {
+        void TrackPage(string pageName);
+        void TrackEvent(string category, string action, string label, long value);
+        void Report(string message, Severity warningLevel = Severity.Warning);
+        void Report(Exception exception, Severity warningLevel = Severity.Warning);
+        void Report(Exception exception, IDictionary<string, string> extraData, Severity warningLevel = Severity.Warning);
+    }
 }
