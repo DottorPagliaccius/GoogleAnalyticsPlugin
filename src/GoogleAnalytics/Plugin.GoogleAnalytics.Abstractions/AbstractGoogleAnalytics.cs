@@ -6,6 +6,8 @@ namespace Plugin.GoogleAnalytics.Abstractions
 {
     public abstract class AbstractGoogleAnalytics : IGoogleAnalytics
     {
+        public abstract bool EnableAdvertisingTracking { get; set; }
+
         public abstract void TrackPage(string pageName);
         public abstract void TrackEvent(string category, string action, string label, long value);
         public abstract void Report(string message, Severity warningLevel = Severity.Warning);

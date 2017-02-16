@@ -11,6 +11,8 @@ namespace Plugin.GoogleAnalytics.Abstractions
 
     public interface IGoogleAnalytics
     {
+        bool EnableAdvertisingTracking { get; set; }
+
         void TrackPage(string pageName);
         void TrackEvent(string category, string action, string label, long value);
         void Report(string message, Severity warningLevel = Severity.Warning);

@@ -11,7 +11,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Plugin.GoogleAnalytics</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Plugin.GoogleAnalytics</AssemblyName>
+    <AssemblyName>Xamarin.Plugins.GoogleAnalytics</AssemblyName>
+    <ReleaseVersion>0.1.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
