@@ -10,14 +10,14 @@ namespace Plugin.GoogleAnalytics.Abstractions
 
         public abstract void TrackPage(string pageName);
         public abstract void TrackEvent(string category, string action, string label, long value);
-        public abstract void Report(string message, Severity warningLevel = Severity.Warning);
+        public abstract void Report(string message, bool isFatal = false);
 
-        public void Report(Exception exception, Severity warningLevel = Severity.Warning)
+        public void Report(Exception exception, bool isFatal = false)
         {
-            Report(FormatException(exception), warningLevel);
+            Report(FormatException(exception), isFatal);
         }
 
-        public void Report(Exception exception, IDictionary<string, string> extraData, Severity warningLevel = Severity.Warning)
+        public void Report(Exception exception, IDictionary<string, string> extraData, bool isFatal = false)
         {
             var message = FormatException(exception);
 
@@ -37,7 +37,7 @@ namespace Plugin.GoogleAnalytics.Abstractions
                 message = stringBuilder.ToString();
             }
 
-            Report(message, warningLevel);
+            Report(message, isFatal);
         }
 
         public static string FormatException(Exception exception)

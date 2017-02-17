@@ -1,4 +1,5 @@
 using System;
+using Android.App;
 using Android.Content;
 using Android.Gms.Analytics;
 using Plugin.GoogleAnalytics.Abstractions;
@@ -14,6 +15,8 @@ namespace Plugin.GoogleAnalytics
     {
         private static Tracker _tracker;
         private bool _enableAdvertisingTracking;
+
+        public bool WriteExceptionsOnDeviceLog { get; set; } = true;
 
         /// <summary>
         /// Gets or sets a value indicating whether this
@@ -65,15 +68,18 @@ namespace Plugin.GoogleAnalytics
         }
 
         /// <summary>
-        /// Report the specified message and warningLevel.
+        /// Report the specified message and isFatal.
         /// </summary>
         /// <param name="message">Message.</param>
-        /// <param name="warningLevel">Warning level.</param>
-        public override void Report(string message, Severity warningLevel = Severity.Warning)
+        /// <param name="isFatal">If set to <c>true</c> is fatal.</param>
+        public override void Report(string message, bool isFatal = false)
         {
+            if (WriteExceptionsOnDeviceLog)
+                Android.Util.Log.Debug(Application.Context.PackageName, message);
+
             var builder = new HitBuilders.ExceptionBuilder();
             builder.SetDescription(message);
-            builder.SetFatal(warningLevel != Severity.Warning);
+            builder.SetFatal(isFatal);
 
             _tracker.Send(builder.Build());
         }

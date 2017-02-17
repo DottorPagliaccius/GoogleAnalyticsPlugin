@@ -10,8 +10,6 @@ namespace Plugin.GoogleAnalytics
     /// </summary>
     public class GoogleAnalyticsImplementation : AbstractGoogleAnalytics
     {
-        private const string AllowTrackingKey = "AllowTracking";
-
         private static ITracker _tracker;
 
         private bool _enableAdvertisingTracking;
@@ -55,10 +53,6 @@ namespace Plugin.GoogleAnalytics
             if (trackingId == null)
                 throw new ArgumentNullException(nameof(trackingId));
 
-            var optionsDict = NSDictionary.FromObjectAndKey(new NSString("YES"), new NSString(AllowTrackingKey));
-            NSUserDefaults.StandardUserDefaults.RegisterDefaults(optionsDict);
-
-            Gai.SharedInstance.OptOut = !NSUserDefaults.StandardUserDefaults.BoolForKey(AllowTrackingKey);
             Gai.SharedInstance.DispatchInterval = 10;
             Gai.SharedInstance.TrackUncaughtExceptions = true;
 
@@ -66,13 +60,13 @@ namespace Plugin.GoogleAnalytics
         }
 
         /// <summary>
-        /// Report the specified message and warningLevel.
+        /// Report the specified message and isFatal.
         /// </summary>
         /// <param name="message">Message.</param>
-        /// <param name="warningLevel">Warning level.</param>
-        public override void Report(string message, Severity warningLevel = Severity.Warning)
+        /// <param name="isFatal">If set to <c>true</c> is fatal.</param>
+        public override void Report(string message, bool isFatal = false)
         {
-            _tracker.Send(DictionaryBuilder.CreateException(message, warningLevel != Severity.Warning).Build());
+            _tracker.Send(DictionaryBuilder.CreateException(message, isFatal).Build());
         }
 
         /// <summary>
