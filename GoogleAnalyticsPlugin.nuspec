@@ -2,8 +2,8 @@
 <package >
   <metadata>
     <id>Xamarin.Plugins.GoogleAnalytics</id>
-    <version>0.1.4-beta</version>
-    <title>GoogleAnalytics Plugin for Xamarin *** WORK IN PROGRESS ***</title>
+    <version>0.1.5</version>
+    <title>GoogleAnalytics Plugin for Xamarin</title>
     <authors>DottorPagliaccius</authors>
     <owners>DottorPagliaccius</owners>
     <licenseUrl>https://github.com/DottorPagliaccius/GoogleAnalyticsPlugin/blob/master/LICENSE</licenseUrl>
@@ -16,7 +16,7 @@
     <tags>xamarin, pcl, xam.pcl, plugin for xamarin, plugin, settings, analytics, google analytics, android, xamarin.forms, ios, monoandroid, monodroid, monotouch</tags>
      <dependencies>
       <group targetFramework="MonoAndroid10">
-        <dependency id="Xamarin.GooglePlayServices.Analytics" version="29.0.0.2" />
+        <dependency id="Xamarin.GooglePlayServices.Analytics" version="[29.0.0.2]" />
       </group>
       <group targetFramework="Xamarin.iOS10">
         <dependency id="Xamarin.Google.iOS.Analytics" version="3.17.0" /> 

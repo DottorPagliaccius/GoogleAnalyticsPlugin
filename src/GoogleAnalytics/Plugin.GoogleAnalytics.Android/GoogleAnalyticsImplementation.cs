@@ -10,12 +10,17 @@ namespace Plugin.GoogleAnalytics
 {
     /// <summary>
     /// Implementation for Feature
-    /// </summary>
+    /// </summary> 
     public class GoogleAnalyticsImplementation : AbstractGoogleAnalytics
     {
         private static Tracker _tracker;
         private bool _enableAdvertisingTracking;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this
+        /// <see cref="T:Plugin.GoogleAnalytics.GoogleAnalyticsImplementation"/> write exceptions on device log.
+        /// </summary>
+        /// <value><c>true</c> if write exceptions on device log; otherwise, <c>false</c>.</value>
         public bool WriteExceptionsOnDeviceLog { get; set; } = true;
 
         /// <summary>
