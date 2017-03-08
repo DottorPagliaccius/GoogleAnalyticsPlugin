@@ -49,9 +49,9 @@ On Android, in your main Activity's OnCreate (..) implementation, call:
 ```csharp
 GoogleAnalyticsImplementation.Init("UA-XXXXXXX-X", this);
 ```
-In your AppDelegate's FinishedLaunching (..) implementation, call:
 
 ## iOS
+In your AppDelegate's FinishedLaunching (..) implementation, call:
 
 ```csharp
 GoogleAnalyticsImplementation.Init("trackerName", "UA-XXXXXXX-X");
