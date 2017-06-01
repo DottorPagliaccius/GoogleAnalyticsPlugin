@@ -1,42 +1,40 @@
 <?xml version="1.0"?>
-<package >
-  <metadata>
-    <id>Xamarin.Plugins.GoogleAnalytics</id>
-    <version>0.1.5</version>
-    <title>GoogleAnalytics Plugin for Xamarin</title>
-    <authors>DottorPagliaccius</authors>
-    <owners>DottorPagliaccius</owners>
-    <licenseUrl>https://github.com/DottorPagliaccius/GoogleAnalyticsPlugin/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/DottorPagliaccius/GoogleAnalyticsPlugin</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/DottorPagliaccius/GoogleAnalyticsPlugin/master/art/icon.png</iconUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>GoogleAnalytics Plugin for Xamarin...</description>
-	  <summary>Cross platform settings for Xamarin.iOS, Xamarin.Android and Xamarin.Forms</summary>
-    <releaseNotes>See Changelog: ~</releaseNotes>
-    <tags>xamarin, pcl, xam.pcl, plugin for xamarin, plugin, settings, analytics, google analytics, android, xamarin.forms, ios, monoandroid, monodroid, monotouch</tags>
-     <dependencies>
-      <group targetFramework="MonoAndroid10">
-        <dependency id="Xamarin.GooglePlayServices.Analytics" version="[29.0.0.2]" />
-      </group>
-      <group targetFramework="Xamarin.iOS10">
-        <dependency id="Xamarin.Google.iOS.Analytics" version="3.17.0" /> 
-      </group>
-    </dependencies>
-  </metadata>
-  <files> 
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics/bin/Release/Xamarin.Plugins.GoogleAnalytics.dll" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.dll" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics/bin/Release/Xamarin.Plugins.GoogleAnalytics.dll.mdb" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.dll.mdb" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll.mdb" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll.mdb" />
-    
-    <!--Xamarin.Android-->
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Android/bin/Release/Xamarin.Plugins.GoogleAnalytics.dll" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.dll" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Android/bin/Release/Xamarin.Plugins.GoogleAnalytics.dll.mdb" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.dll.mdb" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll.mdb" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll.mdb" />
-
-    <!--Xamarin.iOS-->
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.iOS/bin/iPhone/Release/Xamarin.Plugins.GoogleAnalytics.dll" target="lib/Xamarin.iOS10/Xamarin.Plugins.GoogleAnalytics.dll" />
-    <file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" target="lib/Xamarin.iOS10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" />
-  </files>
+<package>
+	<metadata>
+		<id>Xamarin.Plugins.GoogleAnalytics</id>
+		<version>0.1.9</version>
+		<title>GoogleAnalytics Plugin for Xamarin</title>
+		<authors>DottorPagliaccius</authors>
+		<owners>DottorPagliaccius</owners>
+		<licenseUrl>https://github.com/DottorPagliaccius/GoogleAnalyticsPlugin/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/DottorPagliaccius/GoogleAnalyticsPlugin</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/DottorPagliaccius/GoogleAnalyticsPlugin/master/art/icon.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>GoogleAnalytics Plugin for Xamarin...</description>
+		<summary>Cross platform settings for Xamarin.iOS, Xamarin.Android and Xamarin.Forms</summary>
+		<releaseNotes>0.1.9: update dependencies</releaseNotes>
+		<tags>xamarin, pcl, xam.pcl, plugin for xamarin, plugin, settings, analytics, google analytics, android, xamarin.forms, ios, monoandroid, monodroid, monotouch</tags>
+		<dependencies>
+			<group targetFramework="MonoAndroid70">
+				<dependency id="Xamarin.GooglePlayServices.Analytics" version="42.1021.1" />
+			</group>
+			<group targetFramework="Xamarin.iOS10">
+				<dependency id="Xamarin.Google.iOS.Analytics" version="3.17.0.1" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics/bin/Release/Xamarin.Plugins.GoogleAnalytics.dll" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.dll" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics/bin/Release/Xamarin.Plugins.GoogleAnalytics.pdb" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.pdb" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.pdb" target="lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Xamarin.Plugins.GoogleAnalytics.Abstractions.pdb" />
+		<!--Xamarin.Android-->
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Android/bin/Release/Xamarin.Plugins.GoogleAnalytics.dll" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.dll" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Android/bin/Release/Xamarin.Plugins.GoogleAnalytics.pdb" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.pdb" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.pdb" target="lib/MonoAndroid10/Xamarin.Plugins.GoogleAnalytics.Abstractions.pdb" />
+		<!--Xamarin.iOS-->
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.iOS/bin/iPhone/Release/Xamarin.Plugins.GoogleAnalytics.dll" target="lib/Xamarin.iOS10/Xamarin.Plugins.GoogleAnalytics.dll" />
+		<file src="src/GoogleAnalytics/Plugin.GoogleAnalytics.Abstractions/bin/Release/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" target="lib/Xamarin.iOS10/Xamarin.Plugins.GoogleAnalytics.Abstractions.dll" />
+	</files>
 </package>
